@@ -3,7 +3,7 @@ import json
 from Bio import SeqIO
 
 # Define the path to the GenBank files
-path = "C:/Users/Nishant Thalwal/Desktop/Genbank/GenBankFiles"
+path = "C:/Users/Nishant Thalwal/Desktop/BioStreamline-main/GenBankFiles"
 
 # List to store extracted data
 extracted_data = []
