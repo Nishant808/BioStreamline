@@ -121,9 +121,3 @@ def analyze_feature_lengths(data):
     # Show the figure
     fig.show()
 
-# Load the JSON data from a file
-with open('extracted_data.json', 'r') as f:
-    data = json.load(f)
-
-# Analyze the feature lengths and counts
-analyze_feature_lengths(data)
