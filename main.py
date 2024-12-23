@@ -1,49 +1,27 @@
 import retrieval
+import to_genbank
 import process_genbank
 import stat_analysis
-import to_csv
-import to_genbank
+import json
+import Clean_Directory
 
-# Step 1: Retrieve Sequence IDs
-def retrieve_sequences():
-    print("Step 1: Retrieving sequence IDs from GenBank...")
-    retrieval.ncbi_genbank()  # Assumes search term and count are prompted within the function
-    print("Sequence IDs retrieved successfully.")
-
-# Step 2: Save GenBank Files
-def save_genbank_files():
-    print("Step 2: Saving GenBank files...")
-    to_genbank.save_genbank()  # Assumes IDs are handled globally in the retrieval module
-    print("GenBank files saved successfully.")
-
-# Step 3: Process GenBank Files
-def process_files():
-    print("Step 3: Processing GenBank files to extract features...")
-    extracted_data = process_genbank.gc_features()
-    print("Feature extraction complete.")
-    return extracted_data
-
-# Step 4: Perform Statistical Analysis
-def analyze_features(extracted_data):
-    print("Step 4: Performing statistical analysis on extracted features...")
-    stat_analysis.analyze_feature_lengths(extracted_data)  # Assumes analysis and visualization are handled
-    print("Statistical analysis complete.")
-
-# Step 5: Export to CSV
-def export_to_csv(extracted_data):
-    print("Step 5: Exporting extracted data to CSV...")
-    to_csv.export(extracted_data)  # Assumes the function handles exporting
-    print("Data exported to CSV successfully.")
+folder_path = r"C:/Users/Nishant Thalwal/Desktop/Biostreamline-main/GenBankFiles"
 
 # Main function to orchestrate the pipeline
 def main():
     print("Starting the automated pipeline...")
-    retrieve_sequences()
-    save_genbank_files()
-    extracted_data = process_files()
-    analyze_features(extracted_data)
-    export_to_csv(extracted_data)
+    retrieval.ncbi_genbank()
+    to_genbank.save_genbank()
+    process_genbank.gc_features()
+    with open('extracted_data.json', 'r') as f:
+        data=json.load(f)
+    # Analyze the feature lengths and counts
+    stat_analysis.analyze_feature_lengths(data=data)
     print("Pipeline execution completed successfully.")
 
+
+
 if __name__ == "__main__":
+    Clean_Directory.clear_folder(folder_path)
     main()
+
