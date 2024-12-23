@@ -1,5 +1,6 @@
 # BioStreamline-Pipeline
-![image](https://github.com/user-attachments/assets/2b2fd583-9293-4e8d-9ac9-8f5adc4b7836)
+![DALL·E 2024-12-23 15 48 00 - A simple, modern logo design for a bioinformatics pipeline called BioStreamline  The logo should represent genomic data analysis, with an abstract rep](https://github.com/user-attachments/assets/21457e37-30e3-489c-be95-155a9f3987d2)
+
 
 **BioStreamline** is an automated bioinformatics pipeline designed to streamline the process of retrieving, processing, and analyzing GenBank data. It integrates tools for data extraction, feature analysis, and visualization to provide an end-to-end solution for genomic data analysis.
 
