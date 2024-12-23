@@ -3,7 +3,7 @@ import Bio.Entrez
 import os
 
 # Set your email for NCBI requests
-Bio.Entrez.email = 'nishantthalwal@gmail.com'
+Bio.Entrez.email = str(input("Enter Your E-mail: "))
 
 # Define a global list for IDs
 ID = []
