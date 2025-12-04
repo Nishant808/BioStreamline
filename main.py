@@ -5,7 +5,7 @@ import stat_analysis
 import json
 import Clean_Directory
 import to_csv
-folder_path = r"C:/Users/Nishant Thalwal/Desktop/Biostreamline-main/GenBankFiles"
+folder_path = r"GenBankFiles"
 
 # Main function to orchestrate the pipeline
 def main():
